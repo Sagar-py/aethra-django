@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mx-auto p-4">
+        <h2 class="text-2xl font-semibold mb-6">Review Your Progress</h2>
+
+        <div class="mb-6">
+            <form method="GET">
+                <label for="period" class="mr-4">Select Time Period:</label>
+                <select id="period" name="period" class="p-2 border border-gray-300 rounded-md">
+                    <option value="1" {% if period == '1' %}selected{% endif %}>Last Month</option>
+                    <option value="3" {% if period == '3' %}selected{% endif %}>Last 3 Months</option>
+                    <option value="6" {% if period == '6' %}selected{% endif %}>Last 6 Months</option>
+                    <option value="12" {% if period == '12' %}selected{% endif %}>Last Year</option>
+                </select>
+                <button type="submit" class="bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600 ml-4">
+                    View Progress
+                </button>
+            </form>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div class="flex flex-col">
+                <h3 class="text-lg font-semibold mb-2">Spiritual</h3>
+                <p class="text-xl font-bold {% if spiritual_score_change > 0 %}text-green-500{% elif spiritual_score_change < 0 %}text-red-500{% else %}text-gray-500{% endif %}">
+                    {{ spiritual_score }} 
+                    {% if spiritual_score_change %}
+                        ({{ spiritual_score_change }})
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="flex flex-col">
+                <h3 class="text-lg font-semibold mb-2">Relationships</h3>
+                <p class="text-xl font-bold {% if relationships_score_change > 0 %}text-green-500{% elif relationships_score_change < 0 %}text-red-500{% else %}text-gray-500{% endif %}">
+                    {{ relationships_score }} 
+                    {% if relationships_score_change %}
+                        ({{ relationships_score_change }})
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="flex flex-col">
+                <h3 class="text-lg font-semibold mb-2">Network</h3>
+                <p class="text-xl font-bold {% if network_score_change > 0 %}text-green-500{% elif network_score_change < 0 %}text-red-500{% else %}text-gray-500{% endif %}">
+                    {{ network_score }} 
+                    {% if network_score_change %}
+                        ({{ network_score_change }})
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="flex flex-col">
+                <h3 class="text-lg font-semibold mb-2">Financial</h3>
+                <p class="text-xl font-bold {% if financial_score_change > 0 %}text-green-500{% elif financial_score_change < 0 %}text-red-500{% else %}text-gray-500{% endif %}">
+                    {{ financial_score }} 
+                    {% if financial_score_change %}
+                        ({{ financial_score_change }})
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="flex flex-col">
+                <h3 class="text-lg font-semibold mb-2">Physical</h3>
+                <p class="text-xl font-bold {% if physical_score_change > 0 %}text-green-500{% elif physical_score_change < 0 %}text-red-500{% else %}text-gray-500{% endif %}">
+                    {{ physical_score }} 
+                    {% if physical_score_change %}
+                        ({{ physical_score_change }})
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="flex flex-col">
+                <h3 class="text-lg font-semibold mb-2">Nature</h3>
+                <p class="text-xl font-bold {% if nature_score_change > 0 %}text-green-500{% elif nature_score_change < 0 %}text-red-500{% else %}text-gray-500{% endif %}">
+                    {{ nature_score }} 
+                    {% if nature_score_change %}
+                        ({{ nature_score_change }})
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="flex flex-col">
+                <h3 class="text-lg font-semibold mb-2">Body</h3>
+                <p class="text-xl font-bold {% if body_score_change > 0 %}text-green-500{% elif body_score_change < 0 %}text-red-500{% else %}text-gray-500{% endif %}">
+                    {{ body_score }} 
+                    {% if body_score_change %}
+                        ({{ body_score_change }})
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="flex flex-col">
+                <h3 class="text-lg font-semibold mb-2">Self</h3>
+                <p class="text-xl font-bold {% if self_score_change > 0 %}text-green-500{% elif self_score_change < 0 %}text-red-500{% else %}text-gray-500{% endif %}">
+                    {{ self_score }} 
+                    {% if self_score_change %}
+                        ({{ self_score_change }})
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+
+        <!-- Spider Chart Section -->
+        <div class="my-8">
+            <h3 class="text-xl font-semibold mb-4">Progress Overview (Spider Chart)</h3>
+            <!-- Add your spider chart visualization here -->
+        </div>
+    </div>
+{% endblock %}

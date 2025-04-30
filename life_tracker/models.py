@@ -32,3 +32,17 @@ class Answer(models.Model):
 
     def __str__(self):
         return f"{self.question} - {self.score}"
+    
+class Progress(models.Model):
+    spiritual = models.IntegerField()
+    relationships = models.IntegerField()
+    network = models.IntegerField()
+    financial = models.IntegerField()
+    physical = models.IntegerField()
+    nature = models.IntegerField()
+    body = models.IntegerField()
+    self = models.IntegerField()
+    date_created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Progress on {self.date_created.strftime('%Y-%m-%d')}"

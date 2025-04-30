@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aethra - Life Tracker</title>
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- You can add other global styles here -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <header class="bg-saffron-500 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-2xl font-semibold">Aethra</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="hover:text-gray-200">Home</a></li>
+                    <li><a href="/tracker/" class="hover:text-gray-200">Tracker</a></li>
+                    <li><a href="/review/" class="hover:text-gray-200">Review</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Content Section -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-saffron-500 text-white text-center py-4">
+        <p>&copy; 2025 Aethra. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

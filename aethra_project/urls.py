@@ -19,4 +19,5 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('life_tracker.urls')),  # Include life_tracker URLs
 ]
