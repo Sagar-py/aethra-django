@@ -1,6 +1,5 @@
 from django.contrib import admin
-from django.urls import path, include
-from life_tracker import views
+from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
